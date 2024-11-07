@@ -110,8 +110,8 @@
         />
         <input 
           type="button" 
-          @click="fracionar" 
-          @keyup.period="fracionar"
+          @click="operar('ponto')" 
+          @keyup.period="operar('ponto')"
           value="." 
           class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-4 px-6 rounded"
         />
@@ -166,11 +166,11 @@ export default {
         subtract: " - ",
         multiply: " * ",
         divide: " / ",
+        ponto: ".",
       },
       result: "",
       igual: "=",
       limpar: "C",
-      ponto: ".",
     };
   },
   methods: {
@@ -189,9 +189,6 @@ export default {
     },
     zerar() {
       this.result = "";
-    },
-    fracionar() {
-      this.result = this.result + this.ponto;
     },
   },
 };
